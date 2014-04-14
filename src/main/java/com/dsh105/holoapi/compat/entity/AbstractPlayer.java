@@ -1,5 +1,6 @@
 package com.dsh105.holoapi.compat.entity;
 
+import com.dsh105.holoapi.compat.protocol.AbstractPacket;
 import com.dsh105.holoapi.compat.world.AbstractWorld;
 import com.dsh105.holoapi.compat.world.Location;
 
@@ -14,4 +15,6 @@ public interface AbstractPlayer<T> {
     public AbstractWorld getWorld();
 
     public Location getLocation();
+
+    public void sendPacket(AbstractPacket packet);
 }

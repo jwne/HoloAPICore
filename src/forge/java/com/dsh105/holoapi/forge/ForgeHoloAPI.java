@@ -14,7 +14,7 @@ import net.minecraftforge.event.CommandEvent;
 import java.io.File;
 import java.util.logging.Logger;
 
-@Mod(modid = Reference.MOD_ID, name= Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class ForgeHoloAPI {
 
     public static final Logger LOGGER = Logger.getLogger(ForgeHoloAPI.class.getCanonicalName());
@@ -22,7 +22,7 @@ public class ForgeHoloAPI {
     protected File dataFolder;
     protected ServerPlatform serverPlatform;
 
-    @Mod.Instance
+    @Mod.Instance(Reference.MOD_ID)
     protected static ForgeHoloAPI core;
 
     @SidedProxy(clientSide = Reference.CLIENT_SIDE_PROXY, serverSide = Reference.SERVER_SIDE_PROXY)
@@ -37,6 +37,8 @@ public class ForgeHoloAPI {
 
         this.dataFolder = new File(event.getModConfigurationDirectory() + File.separator + "HoloAPI");
         this.dataFolder.mkdir();
+
+        core = this;
     }
 
     @Mod.EventHandler

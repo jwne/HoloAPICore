@@ -2,16 +2,16 @@ package com.dsh105.holoapi.compat.protocol;
 
 public interface IPacketProvider {
 
-    public Class getSpawnEntityPacket();
+    public AbstractPacket getSpawnEntityPacket();
 
-    public Class getEntityLivingSpawnPacket();
+    public AbstractPacket getEntityLivingSpawnPacket();
 
-    public Class getMetadataPacket();
+    public AbstractPacket getMetadataPacket();
 
-    public Class getAttachPacket();
+    public AbstractPacket getAttachPacket();
 
-    public Class getTeleportPacket();
+    public AbstractPacket getTeleportPacket();
 
-    public Class getChatPacket();
+    public AbstractPacket getChatPacket();
 
 }

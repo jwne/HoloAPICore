@@ -1,6 +1,7 @@
 package com.dsh105.holoapi.forge;
 
 import com.dsh105.holoapi.compat.entity.AbstractPlayer;
+import com.dsh105.holoapi.compat.protocol.AbstractPacket;
 import com.dsh105.holoapi.compat.world.AbstractWorld;
 import com.dsh105.holoapi.compat.world.Location;
 import com.google.common.base.Preconditions;
@@ -39,5 +40,10 @@ public class ForgePlayer implements AbstractPlayer<EntityPlayerMP> {
     @Override
     public Location getLocation() {
         return null;
+    }
+
+    @Override
+    public void sendPacket(AbstractPacket packet) {
+        this.player.playerNetServerHandler.sendPacket((net.minecraft.network.Packet) packet.getHandle());
     }
 }
