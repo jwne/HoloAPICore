@@ -11,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
 
@@ -29,8 +29,8 @@ sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
 minecraft {
-    version = "1.7.2-10.12.0.1024"
-    forgeVersion = "10.12.0.1024"
+    version = "1.7.2-10.12.0.1057"
+    forgeVersion = "10.12.0.1057"
 
     replaceIn "com/dsh105/holoapi/forge/references/Reference.java"
     replace "%VERSION%", project.version
