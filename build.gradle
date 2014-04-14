@@ -54,7 +54,7 @@ sourceSets {
 processResources {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
-        expand 'version': project.version, 'mcVersion': project.minecraft.version,
+        expand 'version': project.version, 'mcversion': project.minecraft.version,
                 'forgeVersion': project.minecraft.forgeVersion
         include 'mcmod.info'
     }

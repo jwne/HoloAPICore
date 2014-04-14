@@ -8,16 +8,18 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.CommandEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
-import java.util.logging.Logger;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class ForgeHoloAPI {
 
-    public static final Logger LOGGER = Logger.getLogger(ForgeHoloAPI.class.getCanonicalName());
+    public static final Logger LOGGER = LogManager.getLogger("HoloAPI");
 
     protected File dataFolder;
     protected ServerPlatform serverPlatform;
@@ -36,7 +38,8 @@ public class ForgeHoloAPI {
         LOGGER.info("Authors: DSH105, CaptainBern, Frostalf");
 
         this.dataFolder = new File(event.getModConfigurationDirectory() + File.separator + "HoloAPI");
-        this.dataFolder.mkdir();
+        this.dataFolder = new File(Minecraft.getMinecraft().mcDataDir + File.separator + "mods" + File.separator + "HoloAPI");
+        this.dataFolder.mkdirs();
 
         core = this;
     }

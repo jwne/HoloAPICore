@@ -1,23 +1,25 @@
-{
-  "modinfoversion": 2,
-  "modlist": [{
-    "modid": "HoloAPI-Mod",
-    "name": "HoloAPI",
-    "description": "Holograms in Minecraft!",
-    "version": "${version}",
-    "mcversion": "${mcVersion}",
-    "url": "https://github.com/DSH105/HoloAPI",
-    "updateUrl": "",
-    "authors": [ "DSH105", "CaptainBern"],
-    "credits": "",
-    "logoFile": "",
-    "screenshots": [],
-    "requiredMods": [
-        "Forge@[${forgeVersion},)"
-    ],
-    "dependencies": [
-        "Forge@[${forgeVersion},)"
-    ],
-    "dependants": []
-  }]
-}
+[
+   {
+      "modid" : "HoloAPI-Mod",
+      "name" : "HoloAPI",
+      "description" : "Holograms in Minecraft!",
+      "version" : "${version}",
+      "mcversion" : "${mcversion}",
+      "url" : "",
+      "updateUrl" : "",
+      "authorList" :
+         [
+            "CaptainBern",
+            "DSH105"
+         ],
+      "credits" : "By CaptainBern and DSH105",
+      "screenshots" :
+         [
+         ],
+      "parent" : "",
+      "dependencies" :
+         [
+            "mod_MinecraftForge"
+         ]
+   }
+]
