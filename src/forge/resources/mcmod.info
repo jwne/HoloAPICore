@@ -1,0 +1,16 @@
+[
+{
+  "modid": "HoloAPI-Mod",
+  "name": "HoloAPI",
+  "description": "Mod version of HoloAPI",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["CaptainBern", "DSH105],
+  "credits": "Everyone who made this possible. Credits to Asdjke for coming up with the idea.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
