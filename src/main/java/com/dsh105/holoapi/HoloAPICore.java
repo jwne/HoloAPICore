@@ -12,7 +12,7 @@ public class HoloAPICore {
     protected ServerPlatform serverPlatform;
 
     public HoloAPICore(ServerPlatform serverPlatform) {
-        Preconditions.checkNotNull(serverPlatform, "ServerPlatform can't be NULL!");
+        Preconditions.checkNotNull(serverPlatform);
 
         this.serverPlatform = serverPlatform;
     }

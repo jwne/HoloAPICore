@@ -11,7 +11,7 @@ public class ForgeServerPlatform extends ServerPlatform {
     protected MinecraftServer minecraftServer;
 
     public ForgeServerPlatform(ForgeHoloAPI forgeHoloAPI) {
-        Preconditions.checkNotNull(forgeHoloAPI, "HoloAPIMod-instance can't be NULL!");
+        Preconditions.checkNotNull(forgeHoloAPI);
 
         this.forgeServerPlatform = forgeServerPlatform;
         this.minecraftServer = FMLCommonHandler.instance().getMinecraftServerInstance();

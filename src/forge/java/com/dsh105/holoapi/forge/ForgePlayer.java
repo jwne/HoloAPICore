@@ -11,7 +11,7 @@ public class ForgePlayer implements AbstractPlayer<EntityPlayerMP> {
     protected EntityPlayerMP player;
 
     public ForgePlayer(EntityPlayerMP playerMP) {
-        Preconditions.checkNotNull(playerMP, "Player can't be NULL!");
+        Preconditions.checkNotNull(playerMP);
 
         this.player = playerMP;
     }
@@ -23,7 +23,7 @@ public class ForgePlayer implements AbstractPlayer<EntityPlayerMP> {
 
     @Override
     public String getName() {
-        return null;
+        return this.player.getDisplayName();
     }
 
     @Override
