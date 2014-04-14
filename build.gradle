@@ -15,24 +15,52 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "1.0.0"
+group= "com.dsh105.holoapi" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "HoloAPI-forge"
+
+description: "Holograms in Minecraft!"
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
 
 minecraft {
     version = "1.7.2-10.12.0.1024"
     assetDir = "eclipse/assets"
 }
+
+minecraft {
+    version = "1.7.2-10.12.0.1024"
+    forgeVersion = "10.12.0.1024"
+
+    replaceIn "com/dsh105/holoapi/forge/references/Reference.java"
+    replace "%VERSION%", project.version
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+            srcDir 'src/forge/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+            srcDir 'src/forge/resources'
+        }
+    }
+}
+
 processResources
 {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
+        expand 'version': project.version, 'mcVersion': project.minecraft.version,
+                'forgeVersion': project.minecraft.forgeVersion
         include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
     // copy everything else, thats not the mcmod.info
